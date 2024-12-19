@@ -1,0 +1,242 @@
+/* Importação da fonte Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #adadad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+.chat-container {
+    width: 500px;
+    height: 600px;
+    background-color:rgb(80, 24, 29);
+    border-radius: 10px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    transition: 0.4ms;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.chat-header {
+    background-color: rgb(46, 0, 6);
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.4rem;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.chat-header:hover {
+    background-color: rgb(46, 0, 6);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.chat-logo {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.chat-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Container dos botões */
+.button-19 {
+    background: linear-gradient(90deg, rgb(156, 53, 79), rgb(131, 41, 68));
+    border-radius: 15px;
+    padding: 8px 6px;
+    color: white;
+    margin-left: 15px;
+    font-size: 13px;
+    text-transform: uppercase;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button-19:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(90deg, rgb(68, 21, 26), rgb(85, 30, 34));
+}
+
+/* Container das mensagens */
+.chat-box {
+    flex-grow: 2;
+    padding: 10px;
+    overflow-y:scroll;
+    background-color: rgb(80, 24, 29);
+    transition: background-color 0.3s ease;
+}
+
+/* Mensagens no chat */
+/* Caixa de Chat */
+.chat-box {
+    flex-grow: 2;
+    padding: 7px;
+    overflow-y: auto;
+    background-color:rgb(80, 24, 29);
+    border-radius: 0px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    max-height: 500px;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa #f9f9f9;
+}
+
+/* Customização do Scrollbar */
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background-color: #f9f9f9;
+}
+
+/* Mensagens no chat */
+.chat-message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.4s ease;
+}
+
+/* Mensagens do Bot */
+.chat-message.bot-message {
+    justify-content: flex-start;
+    text-align: left;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.chat-message.bot-message .chat-message-text {
+    background-color: #fcc31a;
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+    padding: 10px 15px;
+    max-width: 75%;
+    border-radius: 10px 10px 10px 0;
+    word-wrap: break-word;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Mensagens do Usuário */
+.chat-message.user-message {
+    justify-content: flex-end;
+    text-align: right;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.chat-message.user-message .chat-message-text {
+    background-color: rgb(156, 53, 79);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 10px 15px;
+    max-width: 75%;
+    border-radius: 10px 10px 0 10px;
+    word-wrap: break-word;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Animação de Fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Ícone do bot */
+.bot-icon {
+    width: 60px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+/* Input e Botões */
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color:rgb(80, 24, 29);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid rgb;
+    border-radius: 25px;
+    background-color: rgb(46, 0, 6);
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-input input:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+    outline: none;
+}
+
+.chat-input button {
+    background-color: #FFD700;
+    color:rgb(68, 21, 26);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+}
+
+.chat-input button:hover {
+    background-color: #ffc107;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(255, 193, 7, 0.6);
+}
+
+.chat-input button:active {
+    background-color: #e6ac00;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 193, 7, 0.4);
+}
